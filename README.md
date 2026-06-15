@@ -19,14 +19,16 @@ A telnet backdoor can be enabled on the device without authentication by sending
 
 The vulnerable code is located within the cstecgi.cgi firmware binary, where the supplied password and code values are retrieved from the request, validated against the expected values, and, if correct, used to start the telnet service.
 
-![](imgs/1.png) (decompiled code where password and code values are checked)
+![](img1.png)
 
-![](imgs/2.png) (decompiled code where telnet is executed via system)
+![](img2.png)
 
-![](imgs/3.png)
+![](img3.png)
 
-![](imgs/4.png)
+![](img4.png)
 
 After the requests are successfully processed, the device enables the Telnet service. An attacker can then authenticate via Telnet using the same hardcoded password supplied in the requests and obtain a root shell on the device.
+
+![](img5.png)
 
 As a result, an unauthenticated attacker with network access to the target device can gain full administrative control, leading to complete compromise of the device's confidentiality, integrity, and availability.
