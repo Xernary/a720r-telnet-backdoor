@@ -31,9 +31,3 @@ The vulnerable code is located within the cstecgi.cgi firmware binary, where the
 After the requests are successfully processed, the device enables the Telnet service. An attacker can then authenticate via Telnet using the same hardcoded password supplied in the requests and obtain a root shell on the device.
 
 As a result, an unauthenticated attacker with network access to the target device can gain full administrative control, leading to complete compromise of the device's confidentiality, integrity, and availability.
-
-![](imgs/5.png)
-
-Injecting arbitrary arguments using the '-' character in the ip address field of the `Route Tracking` function (or `Diagnosis` function) via crafted HTTP request leads to argument injection:
-
-![](imgs/4.png)
