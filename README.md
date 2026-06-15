@@ -17,9 +17,9 @@
 
 A telnet backdoor can be enabled on the device without authentication by sending two specially crafted requests containing a hardcoded password and a value derived from the current date.
 
-*Note: The required code value is derived from the device's current date. If the device is not connected to the Internet and its system date is not synchronized, an attacker may need to brute-force a limited range of possible code values in order to successfully enable the backdoor.*
+*Note: The required `code` value is derived from the device's current date. If the device is not connected to the Internet and its system date is not synchronized, an attacker may need to brute-force a limited range of possible code values in order to successfully enable the backdoor.*
 
-The vulnerable code is located within the cstecgi.cgi firmware binary, where the supplied password and code values are retrieved from the request, validated against the expected values, and, if correct, used to start the telnet service.
+The vulnerable code is located within the `cstecgi.cgi` firmware binary, where the supplied password and code values are retrieved from the request, validated against the expected values, and, if correct, used to start the telnet service.
 
 ![](img1.png)
 
