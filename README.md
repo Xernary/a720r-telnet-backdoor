@@ -1,2 +1,39 @@
 # a720r-telnet-backdoor
 Security advisory for TOTOLINK a720r telnet backdoor vulnerability
+
+## Submitter: Nicola Giuffrida
+
+## Information
+
+
+
+**Vendor:** TOTOLINK </br>
+**Vendor's website:** [TOTOLINK](https://www.totolink.net/) </br>
+**Model:** A720R </br>
+**Firmware version:** V4.1.5cu.630_B20250509 </br>
+**Firmware download address:** [TOTOLINK](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/203/ids/36.html)
+
+
+## Vulnerability details
+
+A telnet backdoor can be enabled on the device without authentication by sending two specially crafted requests containing a hardcoded password and a value derived from the current date.
+
+The vulnerable code is located within the cstecgi.cgi firmware binary, where the supplied password and code values are retrieved from the request, validated against the expected values, and, if correct, used to start the telnet service.
+
+![](imgs/1.png) (decompiled code where password and code values are checked)
+
+![](imgs/2.png) (decompiled code where telnet is executed via system)
+
+![](imgs/3.png)
+
+![](imgs/4.png)
+
+After the requests are successfully processed, the device enables the Telnet service. An attacker can then authenticate via Telnet using the same hardcoded password supplied in the requests and obtain a root shell on the device.
+
+As a result, an unauthenticated attacker with network access to the target device can gain full administrative control, leading to complete compromise of the device's confidentiality, integrity, and availability.
+
+![](imgs/5.png)
+
+Injecting arbitrary arguments using the '-' character in the ip address field of the `Route Tracking` function (or `Diagnosis` function) via crafted HTTP request leads to argument injection:
+
+![](imgs/4.png)
