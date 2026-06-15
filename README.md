@@ -1,5 +1,4 @@
-# a720r-telnet-backdoor
-Security advisory for TOTOLINK a720r telnet backdoor vulnerability
+# A720R Telnet backdoor
 
 ## Submitter: Nicola Giuffrida
 
