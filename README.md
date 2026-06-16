@@ -12,6 +12,11 @@
 **Firmware version:** V4.1.5cu.630_B20250509 </br>
 **Firmware download address:** [TOTOLINK](https://www.totolink.net/home/menu/detail/menu_listtpl/download/id/203/ids/36.html)
 
+## Severity
+
+CVSS v4.0 Base Score: 8.7 (High) </br>
+Vector: `CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N`
+
 
 ## Vulnerability details
 
